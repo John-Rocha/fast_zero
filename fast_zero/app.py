@@ -1,7 +1,8 @@
-from fastapi import FastAPI 
+from fastapi import FastAPI
 
-app = FastAPI()  
+app = FastAPI(description='API para testar o FastAPI', title='FastAPI Zero')
 
-@app.get('/{id}')  
-def read_root(id: int):  
-    return {'message': 'Olá Mundo! ' + str(id)}
+
+@app.get('/', description='Retorna uma mensagem de boas-vindas')
+def read_root():
+    return {'message': 'Olá Mundo!'}
